@@ -1,0 +1,30 @@
+ K(i,c)= max[(pi + k(i-1,c-w),k(i-1,c)]         i=0 or c=0 ==0  and weight > capacity -) discard it
+
+  C-----
+O
+:
+:
+:
+
+i= no of objects
+c= capacity of knapsack
+k(i,c)
+
+
+
+1.  putting the objects in the knapsack
+2.  depends on the capacity on knapsack
+3.  in 0-1 knapsack we cant fraction out the object
+4.  we dont use greedy method in knpasack  bec it depend on the profit/weight ratio
+    greater will placed
+5.  dynamic and branch boud techniques arae used 
+6.  The time complexity of solving the 0-1 Knapsack problem using dynamic programming is O(n * W), where "n" is the number of items and "W" is the maximum weight capacity of the knapsack.
+7.
+
+
+Application 
+1. Data Mining and Machine Learning
+2. Space Allocation in Containers
+3. Resource Allocation
+4. Scheduling and Time Management
+5. Telecommunications
