@@ -1,0 +1,194 @@
+
+****************************************************************************************************
+Q1)what is PANDAS
+Pandas is a popular open-source Python library that is widely used for data manipulation and analysis
+It provides tools to easily manipulate, clean, analyze, and visualize data, making it a valuable tool for tasks like data analysis and data preparation for various applications.
+*******************************************************************************************************
+
+
+
+
+
+
+Q2) What is  NUMPY 
+
+NumPy is a Python library for numerical computing. It provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays efficiently.
+**********************************************************************************************************
+
+
+
+
+
+Q3) What is SEABORN
+
+Seaborn is a Python data visualization library built on top of Matplotlib. It simplifies the creation of attractive and informative statistical graphics. 
+
+
+**************************************************************************************************************
+Q4)matplotlib.pyplot is a collection of functions within the Matplotlib library, a popular Python library for creating static, animated, or interactive visualizations in a variety of formats. matplotlib.pyplot provides a convenient interface for creating plots, charts, and graphs by allowing you to interactively build visualizations in a manner similar to MATLAB.
+
+**************************************************************************************************************
+5Q) sklearn
+
+Scikit-Learn, often referred to as sklearn, is a popular Python library for machine learning and data mining. It provides a wide range of tools and algorithms for tasks such as classification, regression, clustering, dimensionality reduction, model selection, and data preprocessing
+
+
+**************************************************************************************************************
+*************df.corr().style.background_gradient(cmap='BuGn')****************
+
+The code df.corr().style.background_gradient(cmap='BuGn') is typically used with a Pandas DataFrame (df) to create a styled representation of a correlation matrix.
+
+df.corr(): This part calculates the correlation matrix for the DataFrame df. 
+
+.style.background_gradient(cmap='BuGn'): After computing the correlation matrix, this part applies a styling to the DataFrame using the style property of Pandas. It specifically applies a background gradient to visually represent the correlation values.
+
+cmap='BuGn': This parameter specifies the colormap to be used for the background gradient. In this case, 'BuGn' is a colormap that shades the background from light to dark green based on the correlation values. Higher positive correlations are represented with darker green, and negative correlations are represented with lighter green
+
+
+**************************************************************************************************************
+
+*************************df.isna().sum()***********************
+
+Certainly! The code df.isna().sum() helps you count how many missing values are in each column of a DataFrame df. Here's an easy way to understand it:
+
+df: Imagine you have a table of data, like an Excel spreadsheet, and it's called df.
+
+.isna(): This part checks each cell in the table to see if it's empty (missing) and makes a new table with True where it's empty and False where it's not.
+
+.sum(): Now, we add up all the True values in each column. This tells us how many missing values there are in each column.
+
+**************************************************************************************************************
+
+*****************************X=df.iloc[:, :df.shape[1]-1] #Independent Variablesy=df.iloc[:, -1] #Dependent Variable X.shape, y.shape******************************
+
+X = df.iloc[:, :df.shape[1]-1]:
+
+df: This is assumed to be a Pandas DataFrame that contains your data.
+df.iloc[:, :df.shape[1]-1]: This line extracts a subset of the DataFrame df. Here's the breakdown:
+df.shape[1]: This part gets the number of columns in the DataFrame df.
+df.shape[1]-1: Subtracting 1 from the number of columns gives you all columns except the last one.
+df.iloc[:, :df.shape[1]-1]: This uses the .iloc method to select all rows (:) and all columns up to the last one. It effectively creates a new DataFrame X that contains all columns except the last one. In many machine learning scenarios, this separation is done to create a feature matrix.
+y = df.iloc[:, -1]:
+
+df.iloc[:, -1]: This line extracts another subset of the DataFrame df, specifically the last column.
+
+
+
+X.shape, y.shape:
+
+This part of the code displays the shape (number of rows and columns) of both the X and y DataFrames. The .shape attribute of a DataFrame returns a tuple in the form (number of rows, number of columns).
+So, X.shape shows the shape of the feature matrix, and y.shape shows the shape of the target variable, allowing you to quickly check the dimensions of your data.
+
+
+
+****************************************************************************************
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=8)
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+
+
+
+
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=8):
+
+This line of code uses the train_test_split function from a machine learning library like Scikit-Learn to split your data into training and testing sets.
+X and y represent your feature matrix (independent variables) and target variable (dependent variable), respectively.
+
+test_size=0.3 specifies that 30% of your data will be used for testing, and the remaining 70% will be used for training.
+
+random_state=8 is an optional parameter that sets a random seed for reproducibility. Using a specific random state ensures that the same 
+
+data split will be generated every time you run the code with the same random state.
+
+
+
+X_train = scaler.fit_transform(X_train):
+
+This line standardizes the training data (X_train) by applying the StandardScaler to it.
+The fit_transform method calculates the mean and standard deviation of each feature in X_train and then scales each feature so that it has a mean of 0 and a standard deviation of 1.
+
+
+
+*****************************************************************************************************
+
+
+def knn(X_train, X_test, y_train, y_test, neighbors, power):
+ This line defines a Python function named knn that takes six parameters: X_train, X_test, y_train, y_test, neighbors, and power. This function is presumably intended to perform K-Nearest Neighbors classification.
+
+
+****************************************************************************
+model = KNeighborsClassifier(n_neighbors=neighbors, p=power)
+
+In this line, a K-Nearest Neighbors classifier is created and assigned to the variable model
+
+
+It configures the model with the number of neighbors (n_neighbors) and the power parameter (p) based on the values passed as arguments when calling the function.
+
+************************************************************************
+print(f"Accuracy for K-Nearest Neighbors model: {accuracy_score(y_test, y_pred)}"):
+
+This line calculates and prints the accuracy of the KNN model on the testing data. The accuracy_score function is used to compute the accuracy, which measures the fraction of correctly predicted outcomes.
+
+*******************************************************************************
+
+cr = classification_report(y_test, y_pred):
+
+This line generates a classification report using the classification_report function. The classification report provides various metrics, including precision, recall, F1-score, and support, for each class (positive and negative).
+
+
+
+
+*************************************************************************************
+
+
+param_grid:
+
+This is a dictionary that specifies the hyperparameters and their possible values to search over during the grid search.
+It defines two hyperparameters:
+'n_neighbors': The number of neighbors to consider in the KNN algorithm, ranging from 1 to 50.
+'p': The power parameter for the Minkowski distance metric, ranging from 1 to 3.
+
+
+
+
+grid = GridSearchCV(estimator=KNeighborsClassifier(), param_grid=param_grid, cv=5):
+
+GridSearchCV is a function from Scikit-Learn that performs a grid search with cross-validation.
+estimator=KNeighborsClassifier(): This specifies the estimator or the machine learning algorithm to be tuned. In this case, it's a K-Nearest Neighbors classifier.
+param_grid=param_grid: This specifies the dictionary of hyperparameters and their possible values to search over, as defined in param_grid.
+cv=5: This parameter indicates the number of cross-validation folds. The data will be split into 5 subsets, and the grid search will be performed 5 times, each time using a different subset as the validation set and the rest as the training set.
+
+
+
+
+
+grid.fit(X_train, y_train):
+
+This line of code starts the grid search process. It fits the KNN classifier with various combinations of hyperparameters specified in param_grid and evaluates their performance using cross-validation.
+X_train and y_train are the training data and labels used during the grid search.
+
+
+
+grid.best_estimator_:
+
+After the grid search is complete, this attribute of the GridSearchCV object returns the best estimator (model) found during the search. It's the KNN classifier with the hyperparameters that resulted in the highest cross-validation performance.
+grid.best_params_:
+
+This attribute returns the combination of hyperparameters that produced the best-performing model.
+
+
+grid.best_score_:
+
+This attribute returns the mean cross-validated score of the best estimator. It provides an estimate of the model's performance using the best hyperparameters.
+
+
+
+In summary, the code is performing a systematic search through a grid of hyperparameter values for a KNN classifier, using cross-validation to find the best combination of hyperparameters that results in the highest performance on the training data. The best estimator, best hyperparameters, and best cross-validated score are then reported. This is a common technique for optimizing machine learning model performance by tuning hyperparameters.
+
+
+
+

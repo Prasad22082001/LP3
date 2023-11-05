@@ -1,0 +1,67 @@
+Q) What is KNN 
+
+The k-Nearest Neighbors (kNN) algorithm is a simple and intuitive machine learning method. In simple terms, here's how it works:
+
+Neighbor-Based: kNN is a neighbor-based algorithm. It makes predictions by looking at the data points closest to the one you want to predict.
+
+k Neighbors: The "k" in kNN represents the number of nearby neighbors to consider. If k=3, for example, the algorithm looks at the three closest data points.
+
+Majority Vote: To make a prediction, kNN examines the class labels of the k nearest neighbors and takes a majority vote. If most of the neighbors belong to a certain class, the algorithm predicts that class for the data point.
+
+Distance Measure: kNN uses a distance measure (usually Euclidean distance) to determine how "close" data points are to each other.
+
+In summary, kNN is like asking your nearest neighbors for advice. If most of your neighbors are doing something, you might do the same. It's a simple yet effective algorithm for classification tasks, where you want to categorize data points into one of several classes based on their similarity to nearby neighbors.
+
+
+EXample
+A real-life example of the k-Nearest Neighbors (kNN) algorithm can be found in the recommendation systems used by streaming platforms, such as Netflix or Spotify.
+ These platforms use kNN to provide recommendations to users based on their viewing or listening history and the preferences of users with similar tastes
+
+
+Application : 
+
+The k-Nearest Neighbors (kNN) algorithm has various applications in both classification and regression tasks across different domains. Here are some common applications of the kNN algorithm:
+
+Classification:
+
+Image Classification: kNN can be used to classify images into different categories, such as handwritten digit recognition, facial recognition, or object recognition.
+
+Text Classification: It can classify text documents, such as spam vs. non-spam emails, sentiment analysis of text (positive vs. negative sentiment), or topic classification.
+
+Medical Diagnosis: In healthcare, kNN can help classify medical conditions based on patient data and symptoms.
+Recommendation Systems:
+
+________________________________________________________________________________________________________________
+
+Confusion matrix
+A confusion matrix is a table that is often used in machine learning to evaluate the performance of a classification model. It provides a summary of how many instances were correctly or incorrectly classified by the model. To explain the confusion matrix with a real-time example, let's consider a binary classification problem, such as classifying emails as either "spam" or "not spam."
+
+Here's a hypothetical example:
+
+True Positives (TP): These are the emails that were correctly classified as "spam." These are the emails that were actually spam, and the model correctly identified them as such.
+
+False Positives (FP): These are the emails that were incorrectly classified as "spam." These are the emails that were not actually spam, but the model mistakenly identified them as spam.
+
+True Negatives (TN): These are the emails that were correctly classified as "not spam" (or "ham"). These are the emails that were not spam, and the model correctly identified them as not spam.
+
+False Negatives (FN): These are the emails that were incorrectly classified as "not spam" (ham). These are the emails that were actually spam, but the model mistakenly identified them as not spam.
+
+
+
+Q)difference between hyperparameter and parameter
+
+
+
+Definition: Hyperparameters are external configurations or settings of a machine learning model that are set before the model is trained. They are not learned from the data but are chosen by the machine learning engineer or researcher.
+
+
+
+Definition: Parameters are internal variables or coefficients that are learned from the training data during the model's training process. They are the values that the model adjusts to make predictions based on the data.
+
+
+
+
+
+
+
+Cross-validation is a technique in machine learning for dividing the dataset into subsets, training the model on some of the data, and testing it on the remaining data in multiple iterations. 
